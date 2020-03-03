@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormsBenchmark.Pages.TestsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ProgressBar Progress="{Binding Progress}" />
+            <ListView x:Name="listViewm" ItemsSource="{Binding TestResults}" >
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Test" Style="{StaticResource Header}"
+                               Grid.Column="0"  HorizontalOptions="Fill"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="Time" Style="{StaticResource Header}"
+                               Grid.Column="1"  HorizontalOptions="Fill"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="CPU" Style="{StaticResource Header}"
+                               Grid.Column="2"  HorizontalOptions="Fill"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="Memory" Style="{StaticResource Header}"
+                               Grid.Column="3"  HorizontalOptions="Fill"
+                               HorizontalTextAlignment="Center" />
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text ="{Binding Name}" Grid.Column="0"
+                                       HorizontalOptions="Fill"
+                                       HorizontalTextAlignment="Left"
+                                       Margin="3, 2, 2, 2" />
+                                <Label Text ="{Binding Performance}" Grid.Column="1"
+                                       HorizontalOptions="Fill"
+                                       HorizontalTextAlignment="Center"
+                                       Margin="2" />
+                                <Label Text ="{Binding CPUUsage}" Grid.Column="2"
+                                       HorizontalOptions="Fill"
+                                       HorizontalTextAlignment="Center"
+                                       Margin="2"/>
+                                <Label Text ="{Binding MemoryUsage}" Grid.Column="3"
+                                       HorizontalOptions="Fill"
+                                       HorizontalTextAlignment="Center"
+                                       Margin="2, 2, 3, 2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

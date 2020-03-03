@@ -6,3 +6,6 @@ the latest external framework unless where needed to complete tests. External
 components are
 * Newtonsoft.JSON
 * Sqlite
+
+The app is designed for testing. A test is derived from the abstract class
+XamarinFormsBenchmark.Tests.Test.

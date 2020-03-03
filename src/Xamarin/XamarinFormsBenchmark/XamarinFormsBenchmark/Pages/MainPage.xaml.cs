@@ -29,33 +29,53 @@ namespace XamarinFormsBenchmark.Pages
         /// <param name="e">Event arguments</param>
         void AllTests(object sender, EventArgs e)
         {
+            ContentPage page = new TestsPage()
+            {
+                Title = "Results - All Tests"
+            };
+            Navigation.PushAsync(page);
         }
 
         /// <summary>
-        /// Run all tests.
+        /// Run database tests.
         /// </summary>
         /// <param name="sender">Source of event</param>
         /// <param name="e">Event arguments</param>
         void DatabaseTests(Object sender, EventArgs e)
         {
+            ContentPage page = new TestsPage()
+            {
+                Title = "Results - All Tests"
+            };
+            Navigation.PushAsync(page);
         }
 
         /// <summary>
-        /// Run all tests.
+        /// Run serialization tests.
         /// </summary>
         /// <param name="sender">Source of event</param>
         /// <param name="e">Event arguments</param>
         void SerializationTests(Object sender, EventArgs e)
         {
+            ContentPage page = new TestsPage()
+            {
+                Title = "Results - All Tests"
+            };
+            Navigation.PushAsync(page);
         }
 
         /// <summary>
-        /// Run all tests.
+        /// Run UI tests.
         /// </summary>
         /// <param name="sender">Source of event</param>
         /// <param name="e">Event arguments</param>
         void UITests(Object sender, EventArgs e)
         {
+            ContentPage page = new TestsPage()
+            {
+                Title = "Results - All Tests"
+            };
+            Navigation.PushAsync(page);
         }
     }
 }
