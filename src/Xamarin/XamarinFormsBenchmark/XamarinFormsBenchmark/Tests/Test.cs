@@ -17,6 +17,9 @@ namespace XamarinFormsBenchmark.Tests
         /// </summary>
         public TestResult TestResult { get; protected set; }
 
+        /// <summary>
+        /// Base constructor for tests.
+        /// </summary>
         public Test()
         {
             TestResult = new TestResult();
