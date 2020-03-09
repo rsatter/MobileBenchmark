@@ -129,6 +129,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.6.292</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -136,5 +139,8 @@
       <Project>{A16B1266-211F-4EA8-8329-2EE2D71B2B60}</Project>
       <Name>XamarinFormsBenchmark</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Northwind_large.sqlite" />
   </ItemGroup>
 </Project>
