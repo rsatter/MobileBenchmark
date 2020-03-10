@@ -7,6 +7,7 @@
              Title="Xamarin.Forms Benchmark"
              x:Class="XamarinFormsBenchmark.Pages.MainPage">
     <StackLayout Padding="3">
+        <Button Text="Setup" Clicked="Setup" />
         <Button Text="All Tests" Clicked="AllTests" />
         <Button Text="Serialization Tests" Clicked="SerializationTests" />
         <Button Text="Database Tests" Clicked="DatabaseTests" />
