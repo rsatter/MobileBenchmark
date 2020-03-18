@@ -17,12 +17,12 @@ namespace XamarinFormsBenchmark.Services
 
         protected IOrderService OrderService { set; get;  }
 
-        public override bool AddOrder(Order order)
+        public override Order AddOrder(Order order)
         {
             return OrderService.AddOrder(order);
         }
 
-        public override bool AddOrders(IList<Order> orders)
+        public override IList<Order> AddOrders(IList<Order> orders)
         {
             return OrderService.AddOrders(orders);
         }
@@ -43,7 +43,7 @@ namespace XamarinFormsBenchmark.Services
             OrderService = dataSource == DataSource.Database ? sqliteOrderService : jsonOrderService;
         }
 
-        public override bool Update(Order order)
+        public override Order Update(Order order)
         {
             return OrderService.Update(order);
         }

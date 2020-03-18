@@ -10,12 +10,12 @@ namespace XamarinFormsBenchmark.Services
         {
         }
 
-        public override bool AddOrder(Order order)
+        public override Order AddOrder(Order order)
         {
             throw new NotImplementedException();
         }
 
-        public override bool AddOrders(IList<Order> order)
+        public override IList<Order> AddOrders(IList<Order> order)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace XamarinFormsBenchmark.Services
             throw new NotImplementedException();
         }
 
-        public override bool Update(Order order)
+        public override Order Update(Order order)
         {
             throw new NotImplementedException();
         }

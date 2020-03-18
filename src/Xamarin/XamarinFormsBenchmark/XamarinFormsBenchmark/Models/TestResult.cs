@@ -3,13 +3,17 @@ namespace XamarinFormsBenchmark.Models
 {
     public class TestResult
     {
-        public TestResult()
+        public TestResult(int numberOfRuns)
         {
+            NumberOfRuns = numberOfRuns;
+            MemoryUsage = new long[numberOfRuns];
+            Performance = new TimeSpan[numberOfRuns];
         }
 
         public string CPUUsage { get; set; }
-        public string MemoryUsage { get; set; }
-        public string Performance { get; set; }
+        public long[] MemoryUsage { get; set; }
         public string Name { get; set; }
+        public int NumberOfRuns{ get; private set; }
+        public TimeSpan[] Performance { get; set; }
     }
 }

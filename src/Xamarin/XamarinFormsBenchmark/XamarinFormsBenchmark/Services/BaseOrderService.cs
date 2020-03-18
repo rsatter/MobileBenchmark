@@ -12,7 +12,7 @@ namespace XamarinFormsBenchmark.Services
     /// <see cref="XamarinFormsBenchmark.Services.IOrderService"/> based on the
     /// <see cref="XamarinFormsBenchmark.Services.DataSource"/> set.
     /// </summary>
-    public abstract class BaseOrderService :IOrderService
+    public abstract class BaseOrderService : IOrderService
     {
         protected DataSource dataSource;
 
@@ -21,26 +21,32 @@ namespace XamarinFormsBenchmark.Services
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
-        public abstract bool AddOrder(Order order);
+        public abstract Order AddOrder(Order order);
 
         /// <summary>
-        /// 
+        /// Add a <see cref="System.Collections.Generic.IList{T}"/> of
+        /// <see cref="XamarinFormsBenchmark.Models.Order"/>.
         /// </summary>
-        /// <param name="orders"></param>
-        /// <returns></returns>
-        public abstract bool AddOrders(IList<Order> orders);
+        /// <param name="orders">Collect of orders</param>
+        /// <returns>true if file successfully written</returns>
+
+        public abstract IList<Order> AddOrders(IList<Order> orders);
 
         /// <summary>
-        /// 
+        /// Delete an <see cref="XamarinFormsBenchmark.Models.Order"/>.
         /// </summary>
         /// <param name="order"></param>
-        /// <returns></returns>
+        /// <returns><see cref="true"/> if successful else <see cref="false"/></returns>
         public abstract bool DeleteOrder(Order order);
 
         /// <summary>
-        /// 
+        /// Get a <see cref="System.Collections.Generic.IList{T}"/> of
+        /// <see cref="XamarinFormsBenchmark.Models.Order"/>.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// <see cref="System.Collections.Generic.IList{T}"/> of
+        /// <see cref="XamarinFormsBenchmark.Models.Order"/>.
+        /// </returns>
         public abstract IList<Order> GetOrders();
 
         /// <summary>
@@ -59,6 +65,15 @@ namespace XamarinFormsBenchmark.Services
             this.dataSource = dataSource;
         }
 
-        public abstract bool Update(Order order);
+        /// <summary>
+        /// Update an <see cref="XamarinFormsBenchmark.Models.Order"/>.
+        /// </summary>
+        /// <param name="order">
+        /// The <see cref="XamarinFormsBenchmark.Models.Order"/> to update.
+        /// </param>
+        /// <returns>
+        /// The updated <see cref="XamarinFormsBenchmark.Models.Order"/>.
+        /// </returns>
+        public abstract Order Update(Order order);
     }
 }

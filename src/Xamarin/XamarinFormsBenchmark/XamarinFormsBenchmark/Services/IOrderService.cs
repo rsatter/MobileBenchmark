@@ -6,11 +6,11 @@ namespace XamarinFormsBenchmark.Services
 {
     public interface IOrderService
     {
-        bool AddOrder(Order order);
-        bool AddOrders(IList<Order> orders);
+        Order AddOrder(Order order);
+        IList<Order> AddOrders(IList<Order> orders);
         bool DeleteOrder(Order order);
         IList<Order> GetOrders();
         void SetDataSource(DataSource dataSource);
-        bool Update(Order order);
+        Order Update(Order order);
     }
 }
