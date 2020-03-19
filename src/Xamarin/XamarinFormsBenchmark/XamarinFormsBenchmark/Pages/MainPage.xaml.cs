@@ -30,7 +30,7 @@ namespace XamarinFormsBenchmark.Pages
         /// <param name="e">Event arguments</param>
         void AllTests(object sender, EventArgs e)
         {
-            ContentPage page = new TestsPage()
+            ContentPage page = new BenchmarkPage()
             {
                 Title = "Results - All Tests"
             };
@@ -44,7 +44,7 @@ namespace XamarinFormsBenchmark.Pages
         /// <param name="e">Event arguments</param>
         void DatabaseTests(Object sender, EventArgs e)
         {
-            ContentPage page = new TestsPage()
+            ContentPage page = new BenchmarkPage()
             {
                 Title = "Results - All Tests"
             };
@@ -58,7 +58,7 @@ namespace XamarinFormsBenchmark.Pages
         /// <param name="e">Event arguments</param>
         void SerializationTests(Object sender, EventArgs e)
         {
-            ContentPage page = new TestsPage()
+            ContentPage page = new BenchmarkPage()
             {
                 Title = "Results - All Tests"
             };
@@ -96,7 +96,7 @@ namespace XamarinFormsBenchmark.Pages
         /// <param name="e">Event arguments</param>
         void UITests(Object sender, EventArgs e)
         {
-            ContentPage page = new TestsPage()
+            ContentPage page = new BenchmarkPage()
             {
                 Title = "Results - All Tests"
             };

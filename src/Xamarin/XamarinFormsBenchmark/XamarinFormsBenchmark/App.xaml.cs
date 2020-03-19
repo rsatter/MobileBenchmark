@@ -1,4 +1,4 @@
-﻿using Xamarin.Forms;
+﻿    using Xamarin.Forms;
 using XamarinFormsBenchmark.Pages;
 
 namespace XamarinFormsBenchmark

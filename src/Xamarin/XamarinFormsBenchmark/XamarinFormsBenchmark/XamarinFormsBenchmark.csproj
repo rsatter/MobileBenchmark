@@ -19,7 +19,7 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="Models\" />
-    <Folder Include="Tests\" />
+    <Folder Include="Benchmarks\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>

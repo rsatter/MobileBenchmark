@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Threading;
 using Xamarin.Essentials;
 using XamarinFormsBenchmark.Models;
+using XamarinFormsBenchmark.Benchmarks;
 
 namespace XamarinFormsBenchmark.Services
 {
@@ -12,31 +13,45 @@ namespace XamarinFormsBenchmark.Services
     /// </summary>
     public class BenchmarkService
     {
-        public static TestResult RunBenchmark(Action test)
+        public static void RunBenchmark(BaseBenchmark test)
         {
             Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.High;
             Thread.CurrentThread.Priority = ThreadPriority.Highest;
-            TestResult result = new TestResult(1000);
-            result.Name = test.Method.Name;
             Stopwatch stopwatch = Stopwatch.StartNew();
 
-
+            test.Initialize();
             // iOS is AOT thus JIT only for other platforms including Android
             // and Tizen
             if (DeviceInfo.Platform != DevicePlatform.Android)
             {
-                test();
+                test.SetupBenchmark();
+                test.ExecuteBenchmark();
+                test.TeardownBenchmark();
             }
 
-            for (int i = 0; i < result.NumberOfRuns; i++)
+            for (int i = 0; i < test.NumberOfRuns; i++)
             {
+                test.SetupBenchmark();
                 stopwatch.Restart();
-                test();
+                test.ExecuteBenchmark();
                 stopwatch.Stop();
-                result.MemoryUsage[i] = Process.GetCurrentProcess().PeakVirtualMemorySize64;
-                result.Performance[i] = stopwatch.Elapsed;
+                test.TestResult.MemoryUsage[i] = Process.GetCurrentProcess().PeakVirtualMemorySize64;
+                test.TestResult.Performance[i] = stopwatch.Elapsed;
+                test.TeardownBenchmark();
+                ClearMemory();
             }
-            return result;
+            
+        }
+
+        /// <summary>
+        /// Clear memory by forcing a garbage collection.
+        /// </summary>
+        private static void ClearMemory()
+        {
+            GC.Collect(0);
+            GC.Collect(1);
+            GC.Collect(2);
+            GC.WaitForFullGCComplete();
         }
     }
 }
